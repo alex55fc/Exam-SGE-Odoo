@@ -238,6 +238,23 @@
 		</field>
 	</record>
 
+	<record id="cerveza_search" model="ir.ui.view">
+		<field name="name">cerveza.search</field>
+		<field name="model">cerveza</field>
+		<field name="arch" type="xml">
+			<search string="cerveza">
+				<field name="name"/>
+				<field name="tipo"/>
+				<field name="descripcion"/>
+				<field name="contenidoalcohol"/>
+				<field name="preciounidad"/>
+				<field name="volumenunidad"/>
+				<filter name="agotadas" string="Agotadas" domain="[('disponible', '=', False)]" />
+				<filter name="disponibles" string="Disponibles" domain="[('disponible', '=', True)]" />
+			</search>
+		</field>
+	</record>
+
 	<!--MenuItem-->
 	<menuitem
 		id="modulo_examen1ev_alexfuela"
