@@ -49,6 +49,9 @@
 
 				<field name="distribuidor"/>
 				<field name="ingrediente" widget="many2many_tags"/>
+				<field name="loteproduccion"/>
+
+				
 			</tree>
 		</field>
 	</record>
@@ -64,6 +67,8 @@
 				<field name="estado"/>
 
 				<field name="empaquetado"/>
+				<field name="cerveza"/>
+
 			</tree>
 		</field>
 	</record>
@@ -129,6 +134,7 @@
 
 						<field name="distribuidor"/>
 						<field name="ingrediente" widget="many2many_tags"/>
+						<field name="loteproduccion"/>
 					</group>
 				</sheet>
 			</form>
@@ -149,6 +155,7 @@
 						<field name="estado"/>
 
 						<field name="empaquetado"/>
+						<field name="cerveza"/>
 					</group>
 				</sheet>
 			</form>

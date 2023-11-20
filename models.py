@@ -11,6 +11,7 @@ class cerveza(models.Model):
     disponible = fields.Boolean()
     distribuidor = fields.Many2one(comodel_name='distribuidor', string='distribuidor')
     ingrediente = fields.Many2many(comodel_name='ingrediente', string='ingrediente')
+    loteproduccion = fields.One2many(comodel_name='loteproduccion', inverse_name='cerveza')
 
     """
     Realiza un filtro de búsqueda para conocer las cervezas agotadas
@@ -30,6 +31,7 @@ class loteproduccion(models.Model):
                                     ],
                               required=True)
     empaquetado = fields.Many2one(comodel_name='empaquetado', string='empaquetado')
+    cerveza= fields.Many2one(comodel_name='cerveza', string='cerveza')
 
     
 class ingrediente(models.Model):
