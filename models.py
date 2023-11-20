@@ -14,10 +14,7 @@ class cerveza(models.Model):
     loteproduccion = fields.One2many(comodel_name='loteproduccion', inverse_name='cerveza')
 
     """
-    Realiza un filtro de búsqueda para conocer las cervezas agotadas
-    Realiza un filtro de búsqueda para conocer las cervezas disponibles
     Debes permitir buscar por Tipo, Contenido de alcohol, Volumen por unidad, Precio por unidad
-
     """
 class loteproduccion(models.Model):
     _name = 'loteproduccion'
@@ -62,6 +59,5 @@ class distribuidor(models.Model):
     telefono = fields.Integer()
     cerveza=fields.One2many(comodel_name='cerveza', inverse_name='distribuidor')
  
-#Cervezas suministradas -> Un distribuidor puede suministrar varios tipos de cervezas
 
 
