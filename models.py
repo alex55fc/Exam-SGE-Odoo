@@ -9,7 +9,8 @@ class cerveza(models.Model):
     preciounidad = fields.Float()
     volumenunidad = fields.Float()
     disponible = fields.Boolean()
-           
+    distribuidor = fields.Many2one(comodel_name='distribuidor', string='distribuidor')
+
     """
     Realiza un filtro de búsqueda para conocer las cervezas agotadas
     Realiza un filtro de búsqueda para conocer las cervezas disponibles
@@ -58,6 +59,8 @@ class distribuidor(models.Model):
     name = fields.Char(required=True)
     direccion = fields.Text()
     telefono = fields.Integer()
+    cerveza=fields.One2many(comodel_name='cerveza', inverse_name='distribuidor')
+ 
 #Cervezas suministradas -> Un distribuidor puede suministrar varios tipos de cervezas
 
 

@@ -47,6 +47,7 @@
 				<field name="volumenunidad"/>
 				<field name="disponible"/>
 
+				<field name="distribuidor"/>
 			</tree>
 		</field>
 	</record>
@@ -100,6 +101,8 @@
 				<field name="name"/>
 				<field name="direccion"/>
 				<field name="telefono"/>
+
+				<field name="cerveza"/>
 			</tree>
 		</field>
 	</record>	
@@ -120,6 +123,8 @@
 						<field name="preciounidad"/>
 						<field name="volumenunidad"/>
 						<field name="disponible"/>
+
+						<field name="distribuidor"/>
 					</group>
 				</sheet>
 			</form>
@@ -192,6 +197,8 @@
 						<field name="name"/>
 						<field name="direccion"/>
 						<field name="telefono"/>
+
+						<field name="cerveza"/>
 					</group>
 				</sheet>
 			</form>
