@@ -12,6 +12,13 @@
 		<field name="res_model">distribuidor</field>
 		<field name="view_mode">tree,form</field>
 	</record>
+	
+	<record id="loteproduccion_action" model="ir.actions.act_window">
+		<field name="name">Action loteproduccion</field>
+		<field name="res_model">loteproduccion</field>
+		<field name="view_mode">tree,form,calendar</field>
+	</record>
+	
 	<!--Tree-->
 	<record id="view_cerveza_tree" model="ir.ui.view" >
 		<field name="name">cerveza.tree</field>
@@ -24,6 +31,19 @@
 				<field name="contenidoalcohol"/>
 				<field name="preciounidad"/>
 				<field name="volumenunidad"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_loteproduccion_tree" model="ir.ui.view" >
+		<field name="name">loteproduccion.tree</field>
+		<field name="model">loteproduccion</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="fechainicio"/>
+				<field name="fechaestimadafinalizacion"/>
+				<field name="cantidadproducida"/>
+				<field name="estado"/>
 			</tree>
 		</field>
 	</record>
@@ -61,6 +81,24 @@
 		</field>
 	</record>
 
+	<record id="loteproduccion_form" model="ir.ui.view" >
+		<field name="name">field_value</field>
+		<field name="model">loteproduccion</field>
+		
+		<field name="arch" type="xml">
+			<form string="loteproduccion">
+				<sheet>
+					<group>
+						<field name="fechainicio"/>
+						<field name="fechaestimadafinalizacion"/>
+						<field name="cantidadproducida"/>
+						<field name="estado"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
 	<record id="distribuidor_form" model="ir.ui.view" >
 		<field name="name">field_value</field>
 		<field name="model">distribuidor</field>
@@ -77,6 +115,18 @@
 			</form>
 		</field>
 	</record>
+	<!--Calendar y busquedas-->
+	<record id="loteproduccion_calendar" model="ir.ui.view" >
+		<field name="name">loteproduccion_calendar</field>
+		<field name="model">loteproduccion</field>
+		<field name="arch" type="xml">
+			<calendar string="loteproduccion" date_start="fechainicio" date_stop="fechaestimadafinalizacion">
+				<field name="cantidadproducida"/>
+				<field name="estado"/>
+			</calendar>
+		</field>
+	</record>
+
 	<!--MenuItem-->
 	<menuitem
 		id="modulo_examen1ev_alexfuela"
@@ -92,6 +142,12 @@
 		id="cerveza"
 		name="cerveza"
 		action="cerveza_action"
+		parent="modulo_examen1ev_alexfuela"
+		sequence="10"/>
+	<menuitem
+		id="loteproduccion"
+		name="loteproduccion"
+		action="loteproduccion_action"
 		parent="modulo_examen1ev_alexfuela"
 		sequence="10"/>
 </odoo>

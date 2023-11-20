@@ -15,6 +15,19 @@ class cerveza(models.Model):
     Debes permitir buscar por Tipo, Contenido de alcohol, Volumen por unidad, Precio por unidad
 
     """
+class loteproduccion(models.Model):
+    #Cerveza -> un lote de producción es asociado a una única cerveza
+    _name = 'loteproduccion'
+    fechainicio = fields.Date()
+    fechaestimadafinalizacion = fields.Date()
+    cantidadproducida = fields.Integer()
+    estado = fields.Selection(selection=[
+                                            ('proceso', 'En proceso'),
+                                            ('completo', 'Completo'),
+                                            ('esperaempaquetado', 'En espera de empaquetado')
+                                    ],
+                              required=True)
+
 class distribuidor(models.Model):
     _name = 'distribuidor'
     name = fields.Char(required=True)
