@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Action-->
+	<record id="distribuidor_action" model="ir.actions.act_window">
+		<field name="name">Action distribuidor</field>
+		<field name="res_model">distribuidor</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<!--Tree-->
+	<record id="view_distribuidor_tree" model="ir.ui.view" >
+		<field name="name">distribuidor.tree</field>
+		<field name="model">distribuidor</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="direccion"/>
+				<field name="telefono"/>
+			</tree>
+		</field>
+	</record>	
+
+	<!--FORM-->
+	<record id="distribuidor_form" model="ir.ui.view" >
+		<field name="name">field_value</field>
+		<field name="model">distribuidor</field>
+		
+		<field name="arch" type="xml">
+			<form string="distribuidor">
+				<sheet>
+					<group>
+						<field name="name"/>
+						<field name="direccion"/>
+						<field name="telefono"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<!--MenuItem-->
+	<menuitem
+		id="modulo_examen1ev_alexfuela"
+		name="modulo_examen1ev_alexfuela"
+		sequence="10"/>
+	<menuitem
+		id="distribuidor"
+		name="distribuidor"
+		action="distribuidor_action"
+		parent="modulo_examen1ev_alexfuela"
+		sequence="10"/>
+</odoo>
