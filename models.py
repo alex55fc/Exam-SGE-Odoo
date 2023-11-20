@@ -43,6 +43,12 @@ class ingrediente(models.Model):
 
 #Un ingrediente puede ser utilizado en la producción de varias cervezas y una cerveza puede requerir varios ingredientes
 
+class empaquetado(models.Model):
+    _name = 'empaquetado'
+    fechaempaquetado = fields.Date()
+    cantidadempaquetada = fields.Integer()
+    #Lote de Producción -> el empaquetado está asociado a uno o varios lotes de producción
+
 class distribuidor(models.Model):
     _name = 'distribuidor'
     name = fields.Char(required=True)
