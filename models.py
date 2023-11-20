@@ -56,7 +56,7 @@ class distribuidor(models.Model):
     _name = 'distribuidor'
     name = fields.Char(required=True)
     direccion = fields.Text()
-    telefono = fields.Integer()
+    telefono = fields.Char()
     cerveza=fields.One2many(comodel_name='cerveza', inverse_name='distribuidor')
  
 

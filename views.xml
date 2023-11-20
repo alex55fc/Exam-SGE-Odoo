@@ -94,7 +94,6 @@
 			<tree>
 				<field name="fechaempaquetado"/>
 				<field name="cantidadempaquetada"/>
-				<field name="cantidadempaquetada"/>
 
 				<field name="loteproduccion"/>
 			</tree>
