@@ -27,6 +27,21 @@ class loteproduccion(models.Model):
                                             ('esperaempaquetado', 'En espera de empaquetado')
                                     ],
                               required=True)
+    
+class ingrediente(models.Model):
+    _name = 'ingrediente'
+    name = fields.Char()
+    tipo = fields.Selection(selection=[
+                                            ('malta', 'Malta'),
+                                            ('lupulo', 'Lúpulo'),
+                                            ('levadura', 'Levadura'),
+                                            ('agua', 'Agua'),
+                                            ('otro', 'Otro')
+                                    ],
+                            required=True)
+    cantidadisponible = fields.Float()
+
+#Un ingrediente puede ser utilizado en la producción de varias cervezas y una cerveza puede requerir varios ingredientes
 
 class distribuidor(models.Model):
     _name = 'distribuidor'
