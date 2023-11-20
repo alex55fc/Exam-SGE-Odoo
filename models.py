@@ -10,6 +10,7 @@ class cerveza(models.Model):
     volumenunidad = fields.Float()
     disponible = fields.Boolean()
     distribuidor = fields.Many2one(comodel_name='distribuidor', string='distribuidor')
+    ingrediente = fields.Many2many(comodel_name='ingrediente', string='ingrediente')
 
     """
     Realiza un filtro de búsqueda para conocer las cervezas agotadas
@@ -18,7 +19,6 @@ class cerveza(models.Model):
 
     """
 class loteproduccion(models.Model):
-    #Cerveza -> un lote de producción es asociado a una única cerveza
     _name = 'loteproduccion'
     fechainicio = fields.Date()
     fechaestimadafinalizacion = fields.Date()
@@ -44,8 +44,7 @@ class ingrediente(models.Model):
                                     ],
                             required=True)
     cantidadisponible = fields.Float()
-
-#Un ingrediente puede ser utilizado en la producción de varias cervezas y una cerveza puede requerir varios ingredientes
+    cerveza = fields.Many2many(comodel_name='cerveza', string='cerveza')
 
 class empaquetado(models.Model):
     _name = 'empaquetado'
