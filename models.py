@@ -10,8 +10,7 @@ class cerveza(models.Model):
     volumenunidad = fields.Float()
     disponible = fields.Boolean()
            
-    """disponible = fields.Boolean(string='Disponible', compute='_compute_disponible')
-    Disponible -> fields.Boolean, calculado automáticamente en función del inventario
+    """
     Realiza un filtro de búsqueda para conocer las cervezas agotadas
     Realiza un filtro de búsqueda para conocer las cervezas disponibles
     Debes permitir buscar por Tipo, Contenido de alcohol, Volumen por unidad, Precio por unidad
@@ -29,6 +28,8 @@ class loteproduccion(models.Model):
                                             ('esperaempaquetado', 'En espera de empaquetado')
                                     ],
                               required=True)
+    empaquetado = fields.Many2one(comodel_name='empaquetado', string='empaquetado')
+
     
 class ingrediente(models.Model):
     _name = 'ingrediente'
@@ -49,7 +50,8 @@ class empaquetado(models.Model):
     _name = 'empaquetado'
     fechaempaquetado = fields.Date()
     cantidadempaquetada = fields.Integer()
-    #Lote de Producción -> el empaquetado está asociado a uno o varios lotes de producción
+    loteproduccion=fields.One2many(comodel_name='loteproduccion', inverse_name='empaquetado')
+        
 
 class distribuidor(models.Model):
     _name = 'distribuidor'

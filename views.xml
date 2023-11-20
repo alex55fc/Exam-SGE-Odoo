@@ -60,6 +60,8 @@
 				<field name="fechaestimadafinalizacion"/>
 				<field name="cantidadproducida"/>
 				<field name="estado"/>
+
+				<field name="empaquetado"/>
 			</tree>
 		</field>
 	</record>
@@ -83,6 +85,9 @@
 			<tree>
 				<field name="fechaempaquetado"/>
 				<field name="cantidadempaquetada"/>
+				<field name="cantidadempaquetada"/>
+
+				<field name="loteproduccion"/>
 			</tree>
 		</field>
 	</record>
@@ -133,6 +138,8 @@
 						<field name="fechaestimadafinalizacion"/>
 						<field name="cantidadproducida"/>
 						<field name="estado"/>
+
+						<field name="empaquetado"/>
 					</group>
 				</sheet>
 			</form>
@@ -166,6 +173,8 @@
 					<group>
 						<field name="fechaempaquetado"/>
 						<field name="cantidadempaquetada"/>
+
+						<field name="loteproduccion"/>
 					</group>
 				</sheet>
 			</form>
