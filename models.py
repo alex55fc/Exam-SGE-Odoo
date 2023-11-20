@@ -8,6 +8,8 @@ class cerveza(models.Model):
     contenidoalcohol = fields.Float()
     preciounidad = fields.Float()
     volumenunidad = fields.Float()
+    disponible = fields.Boolean()
+           
     """disponible = fields.Boolean(string='Disponible', compute='_compute_disponible')
     Disponible -> fields.Boolean, calculado automáticamente en función del inventario
     Realiza un filtro de búsqueda para conocer las cervezas agotadas

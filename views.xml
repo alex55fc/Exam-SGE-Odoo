@@ -45,6 +45,8 @@
 				<field name="contenidoalcohol"/>
 				<field name="preciounidad"/>
 				<field name="volumenunidad"/>
+				<field name="disponible"/>
+
 			</tree>
 		</field>
 	</record>
@@ -112,6 +114,7 @@
 						<field name="contenidoalcohol"/>
 						<field name="preciounidad"/>
 						<field name="volumenunidad"/>
+						<field name="disponible"/>
 					</group>
 				</sheet>
 			</form>
